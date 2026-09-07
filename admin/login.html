@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin — Iniciar sesión</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="login-body">
+  <main class="login-card">
+    <p class="login-eyebrow">— panel administrador —</p>
+    <h1>Iniciar sesión</h1>
+    <p class="login-sub">Ingresa la clave para gestionar el catálogo.</p>
+
+    <form id="loginForm" class="login-form">
+      <label for="password">Clave de acceso</label>
+      <input type="password" id="password" name="password" required autocomplete="current-password" />
+      <button type="submit" class="btn-primary">Entrar</button>
+      <p id="loginError" class="form-error" hidden></p>
+    </form>
+  </main>
+
+  <!-- Config compartida con la tienda: aquí vive la URL del backend -->
+  <script src="../js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

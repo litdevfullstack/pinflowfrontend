@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Admin — Catálogo</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <div class="brand">
+        <span class="brand-name">Panel Admin</span>
+        <span class="brand-tag">gestión de catálogo</span>
+      </div>
+      <div class="admin-header-actions">
+        <a href="../index.html" target="_blank" class="btn-ghost">Ver tienda ↗</a>
+        <button id="logoutBtn" class="btn-ghost">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+
+    <section class="admin-card">
+      <h2 id="formTitle">Agregar producto</h2>
+      <p class="admin-hint">
+        Sube cualquier foto: el servidor la recorta y ajusta automáticamente
+        al mismo tamaño para que todo el catálogo se vea parejo.
+      </p>
+
+      <form id="productForm" class="product-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nombre">Nombre del producto *</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+          <div class="form-field">
+            <label for="precio">Precio (sin puntos ni símbolo) *</label>
+            <input type="number" id="precio" name="precio" min="0" step="1" required />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="descripcion">Descripción *</label>
+          <textarea id="descripcion" name="descripcion" rows="2" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="badge">Etiqueta (opcional)</label>
+            <input type="text" id="badge" name="badge" placeholder="Ej: Nuevo, Oferta" />
+          </div>
+          <div class="form-field">
+            <label for="imagenes">Fotos del producto <span id="imagenesRequeridas">*</span></label>
+            <input
+              type="file"
+              id="imagenes"
+              name="imagenes"
+              accept="image/jpeg,image/png,image/webp"
+              multiple
+            />
+            <span class="field-hint">Puedes seleccionar varias a la vez (máx. 6). La primera foto es la principal.</span>
+          </div>
+        </div>
+
+        <div id="existingImagesWrap" class="existing-images-wrap" hidden>
+          <p class="field-hint">Fotos actuales (haz clic en ✕ para quitar una):</p>
+          <div id="existingImagesList" class="thumb-list"></div>
+        </div>
+
+        <div id="previewWrap" class="thumb-list" hidden></div>
+
+        <p id="formError" class="form-error" hidden></p>
+
+        <div class="form-actions">
+          <button type="submit" id="submitBtn" class="btn-primary">Guardar producto</button>
+          <button type="button" id="cancelEditBtn" class="btn-ghost" hidden>Cancelar edición</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="admin-card">
+      <h2>Productos en el catálogo</h2>
+      <div id="productList" class="admin-product-list">
+        <p class="admin-hint">Cargando...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Config compartida con la tienda: aquí vive la URL del backend -->
+  <script src="../js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

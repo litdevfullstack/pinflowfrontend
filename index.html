@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Online Pin Flow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-name">Pin Flow</span>
+        <span class="brand-tag">catálogo digital</span>
+      </div>
+
+      <div class="search-wrap">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Buscar producto..."
+          autocomplete="off"
+        />
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">— catálogo—</p>
+      <h1 class="hero-title">Elige, confirma y te contactamos por WhatsApp</h1>
+      <p class="hero-sub">Sin registros, sin carritos complicados. Un clic en "Comprar" y hablamos directo.</p>
+    </div>
+  </section>
+
+  <div class="receipt-divider" aria-hidden="true"></div>
+
+  <!-- ===================== CATÁLOGO ===================== -->
+  <main class="catalog-section">
+    <div class="catalog-header">
+      <h2>Catálogo</h2>
+      <span id="resultsCount" class="results-count"></span>
+    </div>
+
+    <div id="productGrid" class="product-grid" aria-live="polite"></div>
+
+    <p id="emptyState" class="empty-state" hidden>No encontramos productos con ese nombre.</p>
+
+    <nav id="pagination" class="pagination" aria-label="Paginación de productos"></nav>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="receipt-divider" aria-hidden="true"></div>
+    <p>© <span id="year"></span> Pin Flow — Hecho con cariño para vender fácil.</p>
+  </footer>
+
+  <!-- Config: URL del backend, número de WhatsApp, moneda, etc. -->
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
