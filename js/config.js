@@ -14,10 +14,10 @@
    ===================================================================== */
 
 const STORE_CONFIG = {
-  apiBaseUrl: "http://localhost:3000",
+  apiBaseUrl: "https://pinflowbackend-1.onrender.com/",
 
   // Número de WhatsApp SIN "+", sin espacios, con código de país.
-  whatsappNumber: "573001234567",
+  whatsappNumber: "573115789113",
 
   currency: "$",
 
